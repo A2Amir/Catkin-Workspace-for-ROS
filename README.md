@@ -67,4 +67,4 @@ But what else has changed? Use the **ls** command again to see what is new.
 <img src="./img/3.png" alt="ls" />
 <p align="left">
 	
-You now have two new directories: **build** and **devel**. The aptly named **build directory is the build space for C++ packages** and for the most part you will not interact with it. The **devel directory does contain something of interest, a file named setup.bash**. This setup.bash script must be sourced before using the catkin workspace. 
+You now have two new directories: **build** and **devel**. **The aptly named build directory is the build space for C++ packages** and for the most part you will not interact with it. **The devel directory does contain something of interest, a file named setup.bash**. This setup.bash script must be sourced before using the catkin workspace. 
