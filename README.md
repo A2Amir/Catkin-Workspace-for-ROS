@@ -26,3 +26,6 @@ Now you can initialize the catkin workspace:
 
 	catkin_init_workspace
 
+<p align="center">
+<img src="./img/1.png" alt="catkin_init_workspace" />
+<p align="center">
