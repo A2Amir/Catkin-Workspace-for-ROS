@@ -26,6 +26,45 @@ Now you can initialize the catkin workspace:
 
 	catkin_init_workspace
 
-<p align="center">
+<p align="left">
 <img src="./img/1.png" alt="catkin_init_workspace" />
-<p align="center">
+<p align="left">
+
+Let’s list the contents of the current directory to see what changed.
+
+	ls -l
+Notice that a symbolic link (**CMakeLists.txt**) has been created to **/opt/ros/kinetic/share/catkin/cmake/toplevel.cmake**
+
+<p align="left">
+<img src="./img/2.png" alt="ls" />
+<p align="left">
+	
+#### Step 4: cd ~/catkin_ws
+Return to the top level directory:
+
+	cd ~/catkin_ws
+
+#### Step 5: catkin_make
+build the workspace.
+Note: you must issue this command from within the top level directory (i.e., within catkin_ws NOT catkin_ws/src)
+
+	catkin_make
+
+While it is not essential that you have a deep understanding of what the catkin build system is, particularly if you are doing most of your development work in Python, it is helpful to learn about it. The curious reader is encouraged to read the [ROS wiki](http://wiki.ros.org/catkin/conceptual_overview). After the command is executed you will notice the output of the build processes being echoed to your display. When it has finished you should see the following lines at the end of the output:
+
+	-- BUILD_SHARED_LIBS is on
+	-- Configuring done
+	-- Generating done
+	-- Build files have been written to: /home/robo/catkin_ws/build
+	####
+	#### Running command: "make -j2 -l2" in "/home/robo/catkin_ws/build"
+	####
+	robo@robo-virtual-machine:~/catkin_ws$
+
+But what else has changed? Use the **ls** command again to see what is new.
+
+<p align="left">
+<img src="./img/3.png" alt="ls" />
+<p align="left">
+	
+You now have two new directories: **build** and **devel**. The aptly named **build** directory is the build space for C++ packages and, for the most part, you will not interact with it. The **devel** directory does contain something of interest, a file named **setup.bash**. This setup.bash script must be sourced before using the catkin workspace. 
