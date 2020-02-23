@@ -26,18 +26,18 @@ Now you can initialize the catkin workspace:
 
 	catkin_init_workspace
 
-<p align="left">
+<p align="right">
 <img src="./img/1.png" alt="catkin_init_workspace" />
-<p align="left">
+<p align="right">
 
 Let’s list the contents of the current directory to see what changed.
 
 	ls -l
 Notice that a symbolic link (**CMakeLists.txt**) has been created to **/opt/ros/kinetic/share/catkin/cmake/toplevel.cmake**
 
-<p align="left">
+<p align="right">
 <img src="./img/2.png" alt="ls" />
-<p align="left">
+<p align="right">
 	
 #### Step 4: cd ~/catkin_ws
 Return to the top level directory:
@@ -63,9 +63,9 @@ While it is not essential that you have a deep understanding of what the catkin 
 
 But what else has changed? Use the **ls** command again to see what is new.
 
-<p align="left">
+<p align="right">
 <img src="./img/3.png" alt="ls" />
-<p align="left">
+<p align="right">
 	
 You now have two new directories: **build** and **devel**. **The aptly named build directory is the build space for C++ packages** and for the most part you will not interact with it. **The devel directory does contain something of interest, a file named setup.bash**. This setup.bash script must be sourced before using the catkin workspace. 
 
@@ -87,10 +87,43 @@ Other folders may include
 * meshes (CAD files in .dae (Collada) or .stl (STereoLithography) format)
 * worlds (XML like files that are used for Gazebo simulation environments)
 
- <p align="left">
+ <p align="right">
 <img src="./img/4.png" alt="ROS packages have a conventional directory structure" />
-<p align="left">
+<p align="right">
 	
 More information is described in the ROS Enhancement Proposal (REP) 128: http://www.ros.org/reps/rep-0128.html
 
 # 2. Add a Package
+
+One of the biggest benefits of using ROS is that it has a really large community of users and developers, so there is a lot of code that you can use.  Let’s clone an existing package and add it to our newly created workspace.
+
+You will start by navigating to the **src** directory and cloning the **simple_arm ** package for this lesson from its github repo.
+
+	cd ~/catkin_ws/src
+	git clone https://github.com/udacity/simple_arm_01.git simple_arm
+
+#### Building the simple_arm package
+
+After the repo has finished cloning, you can change directory to the top-level of the ros workspace and build the new package.
+
+	 cd ~/catkin_ws
+	 catkin_make
+	 
+If you  see a CMake Error "Could not find a package configuration file provided by controller_manager" you should install Missing Packages Using **apt-get**.
+
+#### Installing Missing Packages Using apt-get 
+Note: if you did not get any  CMake error, you do not to run this section. 
+
+I happen to know that controller_manager refers to a ROS package from ROS Control. We can fix this by installing the associated Debian package. If I didn't already know this, I would probably have to rely on a Google search to figure out the exact name of the package required.
+
+	sudo apt-get install ros-kinetic-controller-manager
+	
+Some students have had success using the following commands to install missing packages:
+
+	source devel/setup.bash 
+	rosdep install simple_arm
+	
+OK, now that we have the **controller-manager** package let’s try building again. I'm still in the top level directory, so I can just type **catkin_make** and hit enter. Looks like the build worked. Great, that wasn't so bad. Let’s run some of this code that we just cloned!
+
+
+
