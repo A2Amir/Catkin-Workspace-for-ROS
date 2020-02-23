@@ -180,3 +180,25 @@ To have **rosdep** install packages, invoke the following command from the root 
 <img src="./img/6.png" alt="Rosdep." />
 <p align="right">
 
+# 5. Dive Deeper into Packages
+
+Here you'll begin your dive into ROS packages by creating one of your own. All ROS packages should reside under the **src** directory.
+Assuming you have already sourced your ROS environment and your catkin workspace (or return to ROS Workspace in the [Introduction to ROS](https://github.com/A2Amir/Introduction-to-ROS--Robot-Operating-System) lesson if you forgot), navigate to the src directory:
+
+	cd ~/catkin_ws/src
+	
+The syntax for creating a catkin package is simply,
+
+	catkin_create_pkg <your_package_name> [dependency1 dependency2 …]
+	
+The name of your package is arbitrary but you will run into trouble if you have multiple packages with the same name in your catkin workspace. Try to make it descriptive and unique without being excessively long. Let’s name ours “first_package” and we won’t specify any dependencies. By convention, package names are lowercase.
+
+ 	catkin_create_pkg first_package
+
+You just created your first catkin package! Navigating inside our newly created package reveals that it contains just two files, **CMakeLists.txt** and **package.xml**. This is a minimum working catkin package. It is not very interesting because it doesn't do anything but it meets all the requirements for a catkin package. We won’t pay much attention to them right now but in future lessons you will see how to modify them.
+
+There are many packages that you can install. To see a list of available packages for the Kinetic distribution, take some time to explore [here](http://www.ros.org/browse/list.php).
+
+In [the next lesson]() you'll be writing additional ROS nodes for the simple arm package that you've already added to your catkin workspace. Before you begin the next lesson, it might be valuable to take a peek at the official [ROS wiki](http://wiki.ros.org/).
+
+
