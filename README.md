@@ -126,4 +126,29 @@ Some students have had success using the following commands to install missing p
 OK, now that we have the **controller-manager** package let’s try building again. I'm still in the top level directory, so I can just type **catkin_make** and hit enter. Looks like the build worked. Great, that wasn't so bad. Let’s run some of this code that we just cloned!
 
 
+# 3. Roslaunch
 
+Up until this point you've been launching nodes using the venerable Rosrun command. As I mentioned previously, a Ros system usually consists of many running nodes and running all of the nodes by hand can be torturous. This is where the **roslaunch** command comes to save the day.
+
+Roslaunch allows you to launch multiple nodes with one simple command and set default parameters in the pram server and automatically respond processes that have died and more.
+
+To use **roslaunch**, you must first make sure that your work space has been built and sourced by using the following commands:
+
+	cd ~/catkin_ws3
+	catkin_make
+ 	source devel/setup.bash 
+	rosdep install simple_arm
+	
+The setup.bash in the newly created directory **devel** (in the root of the work space devel/setup.bash ) is responsible for setting up the environment variables, which are responsible for letting the system find all of the packages, libraries and other resources provided by your catkin workspace.
+
+After executing all the above commands, you can use the command **roslaunch** followed by the package name **simple_arm** and then the name of the launch file **robot_spawn.launch**
+
+	roslaunch simple_arm robot_spawn.launch
+	
+Below you can see the simulation environment.
+
+ <p align="right">
+<img src="./img/5.png" alt="the simulation environment." />
+<p align="right">
+	
+# 4. Rosdep
