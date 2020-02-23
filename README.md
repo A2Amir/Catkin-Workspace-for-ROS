@@ -68,3 +68,29 @@ But what else has changed? Use the **ls** command again to see what is new.
 <p align="left">
 	
 You now have two new directories: **build** and **devel**. **The aptly named build directory is the build space for C++ packages** and for the most part you will not interact with it. **The devel directory does contain something of interest, a file named setup.bash**. This setup.bash script must be sourced before using the catkin workspace. 
+
+#### Step 6: Commentary
+
+You just created your first catkin workspace. Before you begin to work with and develop your own ROS package, you should take a moment to get acquainted with catkin workspace conventional directory structure.
+ROS packages have a conventional directory structure. Let’s take a look at a more typical package. 
+* scripts (python executables)
+* src (C++ source files)
+* msg (for custom message definitions)
+* srv (for service message definitions)
+* include -> headers/libraries that are needed as dependencies
+* config -> configuration files
+* launch -> provide a more automated way of starting nodes
+
+Other folders may include
+
+* urdf (Universal Robot Description Files)
+* meshes (CAD files in .dae (Collada) or .stl (STereoLithography) format)
+* worlds (XML like files that are used for Gazebo simulation environments)
+
+ <p align="left">
+<img src="./img/4.png" alt="ROS packages have a conventional directory structure" />
+<p align="left">
+	
+More information is described in the ROS Enhancement Proposal (REP) 128: http://www.ros.org/reps/rep-0128.html
+
+# 2. Add a Package
