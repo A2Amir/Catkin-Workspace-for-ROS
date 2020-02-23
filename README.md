@@ -152,3 +152,31 @@ Below you can see the simulation environment.
 <p align="right">
 	
 # 4. Rosdep
+
+Assuming that you are running the **roslaunch** and you might have seen a warning line like below which shows missing a runtime dependency:
+
+	"Controller Spawner couldn't find the expected controller manager ROS interface." 
+
+ROS packages have two different types of dependencies; 
+
+* build dependencies
+* run dependencies.
+
+As seen in the Installing Missing Packages Using apt-get section we can fix the first build dependency by using a combination of Google search and apt-get to install but when you ran it you got a warning and things did not work out as expected.This is where the **rosdep** tool comes in handy.
+
+The rosdep tool will check for a packages missing dependencies, download them and install them. To check for missing dependencies in the simple_arm package:
+
+	cd ~/catkin_ws3
+	rosdep check simple_arm
+	
+Note: In order for the command to work, the workspace must be sourced.
+
+To have **rosdep** install packages, invoke the following command from the root of the catkin workspace.
+	
+	rosdep install -i simple_arm
+
+
+<p align="right">
+<img src="./img/6.png" alt="Rosdep." />
+<p align="right">
+
