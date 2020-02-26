@@ -4,7 +4,7 @@ ROS provides a powerful build and package management system called Catkin. Willo
 
 Similar to workspaces, which hold a wide variety of Catkin packages, Catkin packages are nothing more than directories containing a variety of resources which when considered together constitute some sort of useful module. Catkin packages may contain source code for nodes, useful scripts, configuration files and more.
 
-In the sections you will see how to create a Catkin workspace, add packages to it, manage inner package dependencies and lastly, how to successfully compile everything.
+In the sections I will show you how to create a Catkin workspace, add packages to it, manage inner package dependencies and lastly, how to successfully compile everything.
 
 # 1. Create a Catkin Workspace
 
