@@ -199,6 +199,6 @@ You just created your first catkin package! Navigating inside our newly created 
 
 There are many packages that you can install. To see a list of available packages for the Kinetic distribution, take some time to explore [here](http://www.ros.org/browse/list.php).
 
-In [the next lesson]() you'll be writing additional ROS nodes for the simple arm package that you've already added to your catkin workspace. Before you begin the next lesson, it might be valuable to take a peek at the official [ROS wiki](http://wiki.ros.org/).
+In [the next lesson](https://github.com/A2Amir/Writing-ROS-Nodes) you'll be writing additional ROS nodes for the simple arm package that you've already added to your catkin workspace. Before you begin the next lesson, it might be valuable to take a peek at the official [ROS wiki](http://wiki.ros.org/).
 
 
